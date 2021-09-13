@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="toggle-button d-lg-none" id="hamb" data-bs-toggle="collapse" href="#collapseExample" role="button"
+        aria-expanded="false" aria-controls="collapseExample">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M3 8V6H21V8H3ZM3 13H21V11H3V13ZM3 18H21V16H3V18Z"
+                fill="#181F36" />
+        </svg>
+    </div>
+
+    <header>
+        <div class="head-content">
+            <div class="bookmark">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M17 3H7C5.9 3 5 3.9 5 5V21L12 18L19 21V5C19 3.9 18.1 3 17 3ZM17 18L12 15.82L7 18V5H17V18Z"
+                        fill="#181F36" />
+                </svg>
+            </div>
+            <div class="cart-block">
+                <div class="cart d-none d-sm-block">
+                    <svg class="cart-icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M15.55 13C16.3 13 16.96 12.59 17.3 11.97L20.88 5.48C21.25 4.82 20.77 4 20.01 4H5.21L4.27 2H1V4H3L6.6 11.59L5.25 14.03C4.52 15.37 5.48 17 7 17H19V15H7L8.1 13H15.55ZM6.16 6H18.31L15.55 11H8.53L6.16 6ZM7 18C5.9 18 5.01 18.9 5.01 20C5.01 21.1 5.9 22 7 22C8.1 22 9 21.1 9 20C9 18.9 8.1 18 7 18ZM17 18C15.9 18 15.01 18.9 15.01 20C15.01 21.1 15.9 22 17 22C18.1 22 19 21.1 19 20C19 18.9 18.1 18 17 18Z"
+                            fill="#181F36" />
+                    </svg>
+                    <span class="cart-price">359 000,00</span>
+                </div>
+                <div class="cart-mob d-sm-none">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M6.99977 18C5.89977 18 5.00977 18.9 5.00977 20C5.00977 21.1 5.89977 22 6.99977 22C8.09977 22 8.99977 21.1 8.99977 20C8.99977 18.9 8.09977 18 6.99977 18Z"
+                            fill="black" />
+                        <path
+                            d="M8.1 13H15.55C15.74 13 15.92 12.97 16.1 12.92C14.69 12.71 13.45 12.01 12.55 11H8.53L6.16 6H11.09C11.21 5.28 11.46 4.61 11.81 4H5.21L4.27 2H1V4H3L6.6 11.59L5.25 14.03C4.52 15.37 5.48 17 7 17H19V15H7L8.1 13Z"
+                            fill="black" />
+                        <path
+                            d="M16.99 18C15.89 18 15 18.9 15 20C15 21.1 15.89 22 16.99 22C18.09 22 18.99 21.1 18.99 20C18.99 18.9 18.09 18 16.99 18Z"
+                            fill="black" />
+                        <path
+                            d="M17 13C20.3137 13 23 10.3137 23 7C23 3.68629 20.3137 1 17 1C13.6863 1 11 3.68629 11 7C11 10.3137 13.6863 13 17 13Z"
+                            fill="#4176C7" />
+                    </svg>
+                </div>
+            </div>
+            <div class="notification">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M17 13.0013C16.3183 12.999 15.6419 12.8807 15 12.6512V17.8812H5V10.7213C4.98665 9.38001 5.50533 8.08813 6.44246 7.1285C7.3796 6.16887 8.65882 5.6197 10 5.60125C10.3814 5.60492 10.7609 5.65529 11.13 5.75125C11.2755 5.08149 11.536 4.44202 11.9 3.86125C11.76 3.86125 11.64 3.76125 11.5 3.73125V2.53125C11.5 2.13343 11.342 1.75189 11.0607 1.47059C10.7794 1.18929 10.3978 1.03125 10 1.03125C9.60218 1.03125 9.22064 1.18929 8.93934 1.47059C8.65804 1.75189 8.5 2.13343 8.5 2.53125V3.73125C6.92423 4.09936 5.52086 4.99327 4.5211 6.26569C3.52134 7.5381 2.98485 9.11312 3 10.7312V16.8713L1 18.9112V19.9112H19V18.9112L17 16.8613V13.0013Z"
+                        fill="black" />
+                    <path
+                        d="M10 23C10.5304 23 11.0391 22.7893 11.4142 22.4142C11.7893 22.0391 12 21.5304 12 21H8C8 21.5304 8.21071 22.0391 8.58579 22.4142C8.96086 22.7893 9.46957 23 10 23Z"
+                        fill="black" />
+                    <path
+                        d="M17 13C20.3137 13 23 10.3137 23 7C23 3.68629 20.3137 1 17 1C13.6863 1 11 3.68629 11 7C11 10.3137 13.6863 13 17 13Z"
+                        fill="#4176C7" />
+                </svg>
+            </div>
+            <div class="userblock">
+                <div class="user-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M21.5102 17.36L16.1129 14.1157C17.972 11.9594 17.992 9.15035 17.992 9.01187V5.52028C17.992 5.46093 17.992 5.40158 17.972 5.35213C17.5122 2.75074 14.5037 1 11.995 1C9.48626 1 6.47776 2.75074 6.01799 5.35213C6.008 5.40158 5.998 5.46093 5.998 5.52028V9.01187C5.998 9.15035 6.01799 11.9594 7.87706 14.1256L2.47976 17.3699C2.17991 17.5381 2 17.8645 2 18.2107V19.4075C2 20.2878 2.71964 21 3.6092 21H20.3908C21.2804 21 22 20.2878 22 19.4075V18.2107C21.99 17.8645 21.8101 17.5381 21.5102 17.36ZM19.991 19.0218H3.999V18.7646L10.066 15.1246C10.5357 14.8378 10.6857 14.2344 10.4058 13.7695C10.3058 13.6113 10.1559 13.5025 10.006 13.4233C8.04698 11.8408 8.007 9.05143 8.007 9.02176V5.62908C8.30685 4.22453 10.1859 2.97824 11.995 2.97824C13.8041 2.97824 15.6832 4.22453 15.993 5.61919V9.01187C15.993 9.04154 15.953 11.8309 13.994 13.4233C13.8341 13.5025 13.6942 13.6113 13.5942 13.7695C13.3043 14.2344 13.4543 14.8477 13.934 15.1246L19.991 18.7646V19.0218Z"
+                            fill="#181F36" />
+                    </svg>
+                </div>
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
+                        <a class="my-nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Константин Константинопольский
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu shadow" aria-labelledby="navbarDarkDropdownMenuLink">
+                            <div class="usercard">
+                                <svg class="dropdown-avatar" width="48" height="48" viewBox="0 0 48 48" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="48" height="48" fill="#6791D2" />
+                                    <path
+                                        d="M24 24C27.315 24 30 21.315 30 18C30 14.685 27.315 12 24 12C20.685 12 18 14.685 18 18C18 21.315 20.685 24 24 24ZM24 27C19.995 27 12 29.01 12 33V36H36V33C36 29.01 28.005 27 24 27Z"
+                                        fill="white" fill-opacity="0.9" />
+                                </svg>
+                                <div class="dropdown-user-info">
+                                    <a href="#" class="dropdown-user-name">
+                                        <h3>Константин Константинопольский</h3>
+                                    </a>
+                                    Директор (Генеральный директор)
+                                    <br><span class="userid">id 333000000</span>
+                                </div>
+                            </div>
+                            <div class="dropdown-company">
+                                <a href="#">
+                                    <svg class="company-avatar" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <rect width="24" height="24" fill="#6791D2" />
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M12.0001 3V7H22.0001V21H2.00006V3H12.0001ZM4.00011 18.9999H6.00011V16.9999H4.00011V18.9999ZM6.00011 15.0001H4.00011V13.0001H6.00011V15.0001ZM4.00011 11H6.00011V9H4.00011V11ZM6.00011 6.9999H4.00011V4.9999H6.00011V6.9999ZM8.00006 18.9999H10.0001V16.9999H8.00006V18.9999ZM10.0001 15.0001H8.00006V13.0001H10.0001V15.0001ZM8.00006 11H10.0001V9H8.00006V11ZM10.0001 6.9999H8.00006V4.9999H10.0001V6.9999ZM12 19H20V9H12V11H14V13H12V15H14V17H12V19ZM18.0001 10.9999H16.0001V12.9999H18.0001V10.9999ZM16.0001 15H18.0001V17H16.0001V15Z"
+                                            fill="white" fill-opacity="0.9" />
+                                    </svg>
+                                    ООО «Company-name»
+                                </a>
+                            </div>
+                            <li><a class="dropdown-item" href="#">Управление аккаунтом</a></li>
+                            <li><a class="dropdown-item" href="#">Данные профиля</a></li>
+                            <li><a class="dropdown-item" href="#">Выйти</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </header>
+
+    <div class="left-nav d-none d-lg-block">
+        <div class="menu-bg">
+            <div class="buttons-group">
+                <button class="button-nav">
+                    <div>
+                        <svg class="nav-btn-ic" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M19 21H15C13.9 21 13 20.1 13 19V13C13 11.9 13.9 11 15 11H19C20.1 11 21 11.9 21 13V19C21 20.1 20.1 21 19 21ZM15 13V19H19V13H15ZM9 21H5C3.9 21 3 20.1 3 19V16C3 14.9 3.9 14 5 14H9C10.1 14 11 14.9 11 16V19C11 20.1 10.1 21 9 21ZM5 16V19H9V16H5ZM9 13H5C3.9 13 3 12.1 3 11V5C3 3.9 3.9 3 5 3H9C10.1 3 11 3.9 11 5V11C11 12.1 10.1 13 9 13ZM5 5V11H9V5H5ZM19 10H15C13.9 10 13 9.1 13 8V5C13 3.9 13.9 3 15 3H19C20.1 3 21 3.9 21 5V8C21 9.1 20.1 10 19 10ZM15 5V8H19V5H15Z"
+                                fill="#fafafa" />
+                        </svg>
+                    </div>
+                    Рабочий стол
+                </button>
+                <button class="button-nav">
+                    <div>
+                        <svg class="nav-btn-ic" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M15.55 13C16.3 13 16.96 12.59 17.3 11.97L20.88 5.48C21.25 4.82 20.77 4 20.01 4H5.21L4.27 2H1V4H3L6.6 11.59L5.25 14.03C4.52 15.37 5.48 17 7 17H19V15H7L8.1 13H15.55ZM6.16 6H18.31L15.55 11H8.53L6.16 6ZM7 18C5.9 18 5.01 18.9 5.01 20C5.01 21.1 5.9 22 7 22C8.1 22 9 21.1 9 20C9 18.9 8.1 18 7 18ZM17 18C15.9 18 15.01 18.9 15.01 20C15.01 21.1 15.9 22 17 22C18.1 22 19 21.1 19 20C19 18.9 18.1 18 17 18Z"
+                                fill="#fafafa" />
+                        </svg>
+                    </div>
+                    Закупки
+                </button>
+                <button class="button-nav">
+                    <div>
+                        <svg class="nav-btn-ic" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M13 13H9V11H13C14.65 11 16 9.65 16 8C16 6.35 14.65 5 13 5H9V3H13C15.76 3 18 5.24 18 8C18 10.76 15.76 13 13 13ZM8 4C8 3.45 8.45 3 9 3C9.55 3 10 3.45 10 4H8ZM10 20C10 20.55 9.55 21 9 21C8.45 21 8 20.55 8 20H10ZM10 4V20H8V4H10ZM7 16.5C6.45 16.5 6 16.05 6 15.5C6 14.95 6.45 14.5 7 14.5V16.5ZM13 14.5C13.55 14.5 14 14.95 14 15.5C14 16.05 13.55 16.5 13 16.5V14.5ZM7 14.5H13V16.5H7V14.5Z"
+                                fill="#fafafa" />
+                        </svg>
+                    </div>
+                    Продажи
+                </button>
+                <button class="button-nav">
+                    <div>
+                        <svg class="nav-btn-ic" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M12.0003 21C11.8303 21 11.6703 20.96 11.5403 20.89L3.56029 16.9C3.21029 16.72 3.00029 16.38 3.00029 16V6.51C2.99029 6.1 3.24029 5.71 3.65029 5.55L11.6503 2.56C11.8803 2.48 12.1303 2.48 12.3503 2.56L20.3503 5.56C20.7603 5.71 21.0103 6.11 21.0003 6.52V16C21.0003 16.38 20.7903 16.72 20.4503 16.89L12.4703 20.88C12.3303 20.96 12.1703 21 12.0003 21C12.0103 21 12.0103 21 12.0003 21ZM13.0003 10.65V18.38L19.0003 15.38V8.04L13.0003 10.65ZM5.00029 15.38L11.0003 18.38V10.65L5.00029 8.03V15.38ZM6.65029 6.57L12.0003 8.91L17.3503 6.58L12.0003 4.57L6.65029 6.57Z"
+                                fill="#fafafa" />
+                        </svg>
+                    </div>
+                    Товары
+                </button>
+                <button class="button-nav">
+                    <div>
+                        <svg class="nav-btn-ic" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M17 15H16C15.45 15 15 14.55 15 14C15 13.45 15.45 13 16 13H17C17.55 13 18 13.45 18 14C18 14.55 17.55 15 17 15ZM21 20V16C21 15.45 20.55 15 20 15H13C12.45 15 12 15.45 12 16V20C12 20.55 12.45 21 13 21H20C20.55 21 21 20.55 21 20ZM14 17H19V19H14V17ZM14 7C14 4.79 12.21 3 10 3C7.79 3 6 4.79 6 7C6 9.21 7.79 11 10 11C12.21 11 14 9.21 14 7ZM12 7C12 8.1 11.1 9 10 9C8.9 9 8 8.1 8 7C8 5.9 8.9 5 10 5C11.1 5 12 5.9 12 7ZM5.54 16H11V18H5H3C3 17.3 3.12 16.63 3.34 16C4.16 13.67 6.39 12 9 12H11C12.09 12 13.12 12.29 14 12.8V14H12H11H9C7.52 14 6.23 14.8 5.54 16Z"
+                                fill="#fafafa" />
+                        </svg>
+                    </div>
+                    Контрагенты
+                </button>
+                <button class="button-nav">
+                    <div>
+                        <svg class="nav-btn-ic" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M10.0004 12C7.79039 12 6.00039 10.21 6.00039 8C6.00039 5.79 7.79039 4 10.0004 4C12.2104 4 14.0004 5.79 14.0004 8C14.0004 10.21 12.2104 12 10.0004 12ZM10.0004 6C8.90039 6 8.00039 6.9 8.00039 8C8.00039 9.1 8.90039 10 10.0004 10C11.1004 10 12.0004 9.1 12.0004 8C12.0004 6.9 11.1004 6 10.0004 6ZM17.1004 20H2.90039L3.10039 18.83C3.66039 15.45 6.57039 13 10.0004 13C13.4304 13 16.3404 15.45 16.9004 18.83L17.1004 20ZM5.41039 18H14.5804C13.8104 16.21 12.0304 15 9.99039 15C7.96039 15 6.19039 16.21 5.41039 18ZM14.0004 11.37C14.9104 10.74 15.5004 9.69 15.5004 8.5C15.5004 7.31 14.9104 6.26 14.0004 5.63C14.5704 5.23 15.2604 5 16.0004 5C17.9304 5 19.5004 6.57 19.5004 8.5C19.5004 10.43 17.9304 12 16.0004 12C15.2604 12 14.5704 11.77 14.0004 11.37ZM18.0004 19H20.8204C20.8204 15.72 18.1904 13.05 14.9204 13C16.7704 14.16 18.0004 16.22 18.0004 18.57V19Z"
+                                fill="#fafafa" />
+                        </svg>
+                    </div>
+                    Сотрудники
+                </button>
+                <button class="button-nav">
+                    <div>
+                        <svg class="nav-btn-ic" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M20 21C19.69 21 19.39 20.86 19.2 20.6L16.5 17H4C3.45 17 3 16.55 3 16V4C3 3.45 3.45 3 4 3H20C20.55 3 21 3.45 21 4V20C21 20.43 20.72 20.81 20.32 20.95C20.21 20.98 20.11 21 20 21ZM5 15H17C17.31 15 17.61 15.15 17.8 15.4L19 17V5H5V15ZM17 7H7V9H17V7ZM17 11H7V13H17V11Z"
+                                fill="#fafafa" />
+                        </svg>
+                    </div>
+                    Сообщения
+                </button>
+                <button class="button-nav">
+                    <div>
+                        <svg class="nav-btn-ic" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M18 21H6C5.45 21 5 20.55 5 20V4C5 3.45 5.45 3 6 3H18C18.55 3 19 3.45 19 4V20C19 20.55 18.55 21 18 21ZM7 19H17V5H7V19ZM14 12.62L11 11.12L8 12.62V3H14V12.62ZM11 8.88L12 9.38V5H10V9.38L11 8.88Z"
+                                fill="#fafafa" />
+                        </svg>
+                        </svg>
+                    </div>
+                    Справочники
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="mobile-nav d-lg-none fade-in-left">
+        <div class="collapse" id="collapseExample">
+            <div class="mob-menu-bg">
+                <div class="mob-buttons-group">
+                    <button class="mob-button-nav">
+                        <svg class="mob-nav-btn-ic" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M19 21H15C13.9 21 13 20.1 13 19V13C13 11.9 13.9 11 15 11H19C20.1 11 21 11.9 21 13V19C21 20.1 20.1 21 19 21ZM15 13V19H19V13H15ZM9 21H5C3.9 21 3 20.1 3 19V16C3 14.9 3.9 14 5 14H9C10.1 14 11 14.9 11 16V19C11 20.1 10.1 21 9 21ZM5 16V19H9V16H5ZM9 13H5C3.9 13 3 12.1 3 11V5C3 3.9 3.9 3 5 3H9C10.1 3 11 3.9 11 5V11C11 12.1 10.1 13 9 13ZM5 5V11H9V5H5ZM19 10H15C13.9 10 13 9.1 13 8V5C13 3.9 13.9 3 15 3H19C20.1 3 21 3.9 21 5V8C21 9.1 20.1 10 19 10ZM15 5V8H19V5H15Z"
+                                fill="#fafafa" />
+                        </svg>
+                        Рабочий стол
+                    </button>
+                    <button class="mob-button-nav">
+                        <svg class="mob-nav-btn-ic" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M15.55 13C16.3 13 16.96 12.59 17.3 11.97L20.88 5.48C21.25 4.82 20.77 4 20.01 4H5.21L4.27 2H1V4H3L6.6 11.59L5.25 14.03C4.52 15.37 5.48 17 7 17H19V15H7L8.1 13H15.55ZM6.16 6H18.31L15.55 11H8.53L6.16 6ZM7 18C5.9 18 5.01 18.9 5.01 20C5.01 21.1 5.9 22 7 22C8.1 22 9 21.1 9 20C9 18.9 8.1 18 7 18ZM17 18C15.9 18 15.01 18.9 15.01 20C15.01 21.1 15.9 22 17 22C18.1 22 19 21.1 19 20C19 18.9 18.1 18 17 18Z"
+                                fill="#FAFAFA" />
+                        </svg>
+
+                        Закупки
+                    </button>
+                    <button class="mob-button-nav">
+                        <svg class="mob-nav-btn-ic width=" 24" height="24" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M13 13H9V11H13C14.65 11 16 9.65 16 8C16 6.35 14.65 5 13 5H9V3H13C15.76 3 18 5.24 18 8C18 10.76 15.76 13 13 13ZM8 4C8 3.45 8.45 3 9 3C9.55 3 10 3.45 10 4H8ZM10 20C10 20.55 9.55 21 9 21C8.45 21 8 20.55 8 20H10ZM10 4V20H8V4H10ZM7 16.5C6.45 16.5 6 16.05 6 15.5C6 14.95 6.45 14.5 7 14.5V16.5ZM13 14.5C13.55 14.5 14 14.95 14 15.5C14 16.05 13.55 16.5 13 16.5V14.5ZM7 14.5H13V16.5H7V14.5Z"
+                                fill="#FAFAFA" />
+                        </svg>
+
+                        Продажи
+                    </button>
+                    <button class="mob-button-nav">
+                        <svg class="mob-nav-btn-ic" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M12.0003 21C11.8303 21 11.6703 20.96 11.5403 20.89L3.56029 16.9C3.21029 16.72 3.00029 16.38 3.00029 16V6.51C2.99029 6.1 3.24029 5.71 3.65029 5.55L11.6503 2.56C11.8803 2.48 12.1303 2.48 12.3503 2.56L20.3503 5.56C20.7603 5.71 21.0103 6.11 21.0003 6.52V16C21.0003 16.38 20.7903 16.72 20.4503 16.89L12.4703 20.88C12.3303 20.96 12.1703 21 12.0003 21C12.0103 21 12.0103 21 12.0003 21ZM13.0003 10.65V18.38L19.0003 15.38V8.04L13.0003 10.65ZM5.00029 15.38L11.0003 18.38V10.65L5.00029 8.03V15.38ZM6.65029 6.57L12.0003 8.91L17.3503 6.58L12.0003 4.57L6.65029 6.57Z"
+                                fill="#FAFAFA" />
+                        </svg>
+
+                        Товары
+                    </button>
+                    <button class="mob-button-nav">
+                        <svg class="mob-nav-btn-ic" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M17 15H16C15.45 15 15 14.55 15 14C15 13.45 15.45 13 16 13H17C17.55 13 18 13.45 18 14C18 14.55 17.55 15 17 15ZM21 20V16C21 15.45 20.55 15 20 15H13C12.45 15 12 15.45 12 16V20C12 20.55 12.45 21 13 21H20C20.55 21 21 20.55 21 20ZM14 17H19V19H14V17ZM14 7C14 4.79 12.21 3 10 3C7.79 3 6 4.79 6 7C6 9.21 7.79 11 10 11C12.21 11 14 9.21 14 7ZM12 7C12 8.1 11.1 9 10 9C8.9 9 8 8.1 8 7C8 5.9 8.9 5 10 5C11.1 5 12 5.9 12 7ZM5.54 16H11V18H5H3C3 17.3 3.12 16.63 3.34 16C4.16 13.67 6.39 12 9 12H11C12.09 12 13.12 12.29 14 12.8V14H12H11H9C7.52 14 6.23 14.8 5.54 16Z"
+                                fill="#FAFAFA" />
+                        </svg>
+
+                        Контрагенты
+                    </button>
+                    <button class="mob-button-nav">
+                        <svg class="mob-nav-btn-ic" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M10.0004 12C7.79039 12 6.00039 10.21 6.00039 8C6.00039 5.79 7.79039 4 10.0004 4C12.2104 4 14.0004 5.79 14.0004 8C14.0004 10.21 12.2104 12 10.0004 12ZM10.0004 6C8.90039 6 8.00039 6.9 8.00039 8C8.00039 9.1 8.90039 10 10.0004 10C11.1004 10 12.0004 9.1 12.0004 8C12.0004 6.9 11.1004 6 10.0004 6ZM17.1004 20H2.90039L3.10039 18.83C3.66039 15.45 6.57039 13 10.0004 13C13.4304 13 16.3404 15.45 16.9004 18.83L17.1004 20ZM5.41039 18H14.5804C13.8104 16.21 12.0304 15 9.99039 15C7.96039 15 6.19039 16.21 5.41039 18ZM14.0004 11.37C14.9104 10.74 15.5004 9.69 15.5004 8.5C15.5004 7.31 14.9104 6.26 14.0004 5.63C14.5704 5.23 15.2604 5 16.0004 5C17.9304 5 19.5004 6.57 19.5004 8.5C19.5004 10.43 17.9304 12 16.0004 12C15.2604 12 14.5704 11.77 14.0004 11.37ZM18.0004 19H20.8204C20.8204 15.72 18.1904 13.05 14.9204 13C16.7704 14.16 18.0004 16.22 18.0004 18.57V19Z"
+                                fill="#FAFAFA" />
+                        </svg>
+
+                        Сотрудники
+                    </button>
+                    <button class="mob-button-nav">
+                        <svg class="mob-nav-btn-ic" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M20 21C19.69 21 19.39 20.86 19.2 20.6L16.5 17H4C3.45 17 3 16.55 3 16V4C3 3.45 3.45 3 4 3H20C20.55 3 21 3.45 21 4V20C21 20.43 20.72 20.81 20.32 20.95C20.21 20.98 20.11 21 20 21ZM5 15H17C17.31 15 17.61 15.15 17.8 15.4L19 17V5H5V15ZM17 7H7V9H17V7ZM17 11H7V13H17V11Z"
+                                fill="#FAFAFA" />
+                        </svg>
+
+                        Сообщения
+                    </button>
+                    <button class="mob-button-nav">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M18 21H6C5.45 21 5 20.55 5 20V4C5 3.45 5.45 3 6 3H18C18.55 3 19 3.45 19 4V20C19 20.55 18.55 21 18 21ZM7 19H17V5H7V19ZM14 12.62L11 11.12L8 12.62V3H14V12.62ZM11 8.88L12 9.38V5H10V9.38L11 8.88Z"
+                                fill="#FAFAFA" />
+                        </svg>
+
+                        Справочники
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="wrapper">
+        <div class="container">
+            <div class="pg-nav row">
+                <div class="col-12">
+                    <div class="pg-nav-name">
+                        <a href="#">
+                            <svg class="nav-arrow-back" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <g id="arrow_back_24px">
+                                    <path id="icon/navigation/arrow_back_24px"
+                                        d="M20 11H7.83L13.42 5.41L12 4L4 12L12 20L13.41 18.59L7.83 13H20V11Z"
+                                        fill="#181F36" fill-opacity="0.67" />
+                                </g>
+                            </svg>
+                        </a>
+                        <h1>Коммерческое предложение от ООО «Джей»</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="page-block">
+                <div class="content col-12">
+                    <div class="block-name row">
+                        <div class="col-12">
+                            <h2 class="fw-normal">Информация о компании</h2>
+                        </div>
+                    </div>
+                    <div class="page-input-small row">
+                        <div class="label-left col-3">
+                            Наименование компании
+                        </div>
+                        <div class="col-5">
+                            <input type="text" name="company-name" id="company-name" class="form-control">
+                        </div>
+                    </div>
+                    <div class="add-photo row">
+                        <div class="label-left col-3">
+                            <p>Баннер</p>
+                            <div class="banner-caption">
+                                <p class="caption">Допустимые форматы: jpg, png.
+                                    <br>Минимальная высота и ширина
+                                    <br>фотографии - 1552 х 280 px</p>
+                            </div>
+                        </div>
+                        <div class="col-5">
+                            <svg class="banner-button" width="74" height="74" viewBox="0 0 74 74" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <rect x="0.5" y="0.5" width="73" height="73" rx="3.5" fill="white" stroke="#4176C7" />
+                                <circle cx="37.507" cy="36.4928" r="23.8288" stroke="#4176C7" />
+                                <path
+                                    d="M44.6024 37.5071H38.5202V43.5892H36.4928V37.5071H30.4106V35.4797H36.4928V29.3975H38.5202V35.4797H44.6024V37.5071Z"
+                                    fill="#4176C7" />
+                            </svg>
+
+                        </div>
+                    </div>
+                    <div class="page-input-small row">
+                        <div class="label-left col-3">
+                            Контакты менеджера
+                            <svg class="question_ic" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M11 18H13V16H11V18ZM12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 20C7.59 20 4 16.41 4 12C4 7.59 7.59 4 12 4C16.41 4 20 7.59 20 12C20 16.41 16.41 20 12 20ZM12 6C9.79 6 8 7.79 8 10H10C10 8.9 10.9 8 12 8C13.1 8 14 8.9 14 10C14 12 11 11.75 11 15H13C13 12.75 16 12.5 16 10C16 7.79 14.21 6 12 6Z"
+                                    fill="#181F36" fill-opacity="0.67" />
+                            </svg>
+
+                        </div>
+                        <div class="col-5">
+                            <input type="checkbox" class="mycheck" id="myToggleButton" />
+                        </div>
+                    </div>
+                    <div class="page-input-small row">
+                        <div class="label-left col-3">
+                            Телефон
+                        </div>
+                        <div class="col-3">
+                            <input type="text" name="company-name" id="company-name" class="form-control">
+                        </div>
+                    </div>
+                    <div class="page-input-small row">
+                        <div class="label-left col-3">
+                            Адрес
+                        </div>
+                        <div class="col-5">
+                            <input type="text" name="company-name" id="company-name" class="form-control">
+                        </div>
+                    </div>
+                    <div class="page-input-small row">
+                        <div class="label-left col-3">
+                            Email
+                        </div>
+                        <div class="col-5">
+                            <input type="text" name="company-name" id="company-name" class="form-control">
+                        </div>
+                    </div>
+                    <div class="page-input-large row">
+                        <div class="label-left col-3">
+                            О компании
+                        </div>
+                        <div class="col-5">
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        </div>
+                    </div>
+                    <div class="page-input-large row">
+                        <div class="label-left col-3">
+                            Описание КП
+                        </div>
+                        <div class="col-5">
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="page-block">
+                <div class="content col-12">
+                    <div class="block-name row">
+                        <div class="col-12">
+                            <h2 class="fw-normal">Товары <span class="secondary-num">(20)</span></h2>
+                        </div>
+                    </div>
+                    <div class="table">
+                        <div class="col-12">
+                            <table class="my-table">
+                                <tr class="tr-head">
+                                    <th>Наименование</th>
+                                    <th>Артикул</th>
+                                    <th width="160">Упаковка</th>
+                                    <th width="100" class="numbers-head-ed">Кол-во ед</th>
+                                    <th width="120" class="numbers-head">Цена ₽</th>
+                                    <th width="120" class="numbers-head">Стоимость ₽</th>
+                                    <th width="120" class="numbers-head-nds">НДС ₽</th>
+                                </tr>
+                                <tr class="tr-table">
+                                    <td class="good-name"><a href="#">Корпус mATX 1STPLAYER RAINBOW R2</a></td>
+                                    <td>754578</td>
+                                    <td class="good-pack">Коробка (1 шт) х10</td>
+                                    <td class="numbers-table-ed">1</td>
+                                    <td class="numbers-table">22 264,00</td>
+                                    <td class="numbers-cost">22 264,00</td>
+                                    <td class="numbers-nds">3 770,00</td>
+                                </tr>
+                                <tr class="tr-table">
+                                    <td class="good-name"><a href="#">Кабель интерфейсный USB 2.0 5bites
+                                            UC5002-010</a></td>
+                                    <td class="articul"> 840395</td>
+                                    <td class="good-pack">Коробка (50 шт) х2</td>
+                                    <td class="numbers-table-ed">100</td>
+                                    <td class="numbers-table">69,00</td>
+                                    <td class="numbers-cost">6 900,00</td>
+                                    <td class="numbers-nds">1 150,00</td>
+                                </tr>
+                                <tr class="tr-table">
+                                    <td class="good-name"><a href="#">Модуль памяти DDR4 8GB ADATA
+                                            AD4U266638G19-S</a></td>
+                                    <td class="articul">681328</td>
+                                    <td class="good-pack">Коробка (10 шт) х3</td>
+                                    <td class="numbers-table-ed">30</td>
+                                    <td class="numbers-table">3 467,00</td>
+                                    <td class="numbers-cost">104 010,00</td>
+                                    <td class="numbers-nds">17 335,00</td>
+                                </tr>
+                                <tr class="tr-table">
+                                    <td class="good-name"><a href="#">Термопаста AeroCool BARAF-S 2G</a></td>
+                                    <td class="articul">7001458</td>
+                                    <td class="good-pack">Коробка (100 шт) х2</td>
+                                    <td class="numbers-table-ed">200</td>
+                                    <td class="numbers-table">391,00</td>
+                                    <td class="numbers-cost">78 200,00</td>
+                                    <td class="numbers-nds">13 033,00</td>
+                                <tr class="tr-table">
+                                    <td colspan="2" class="good-name"><input type="text" name="company-name"
+                                            id="company-name" class="form-control" value="Кулер AeroCool BAS-B9">
+                                    </td>
+
+                                    <td class="good-pack">
+                                        <select class="form-select" aria-label="Default select example">
+                                            <option value="1">Коробка (10 шт)</option>
+                                            <option value="1">Коробка большая (20 шт)</option>
+                                        </select>
+                                    </td>
+                                    <td class="numbers-table-ed">
+                                        <div class="count">
+                                            <button type="button" class="counter-minus">
+                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M19 13H5V11H19V13Z" fill="#4176C7" />
+                                                </svg>
+                                            </button>
+                                            <input type="number" name="company-name" id="company-name"
+                                                class="form-control" value="10">
+                                            <button type="button" class="counter-plus">
+                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M19 13H13V19H11V13H5V11H11V5H13V11H19V13Z"
+                                                        fill="#4176C7" />
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </td>
+                                    <td class="numbers-table">350,00</td>
+                                    <td class="numbers-cost">5 250,00</td>
+                                    <td class="numbers-nds">875,00</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="add-good">
+                        <button type="button" class="add-btn">
+                            <span><svg class="add-icon-btn" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M19 13H13V19H11V13H5V11H11V5H13V11H19V13Z" fill="#4176C7" />
+                                </svg>
+                            </span>
+                            Добавить товар
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="page-block">
+                <div class="content col-12">
+                    <div class="block-name row">
+                        <div class="col-6">
+                            <h2 class="fw-normal">Информация о доставке</h2>
+                        </div>
+                        <div class="col-6">
+                            <div class="add-delivery">
+                                <button type="button" class="add-btn">
+                                    <span><svg class="add-icon-btn" width="24" height="24" viewBox="0 0 24 24"
+                                            fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M19 13H13V19H11V13H5V11H11V5H13V11H19V13Z" fill="#4176C7" />
+                                        </svg>
+                                    </span>
+                                    Добавить способ доставки
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="delivery-cta-txt">
+                        <p>
+                            <font color="#646978">Создайте и отметьте галочками доступные способы доставки</font>
+                        </p>
+                    </div>
+                    <div class="pickup row">
+                        <div class="col-3">
+                            <form>
+                                <div class="custom-control custom-checkbox" data-bs-toggle="collapse"
+                                    href="#collapseExample" role="button" aria-expanded="false"
+                                    aria-controls="collapseExample">
+                                    <input type="checkbox" class="custom-control-input" id="secondcheck"
+                                        name="delivery">
+                                    <label class="custom-control-label" for="secondcheck">Самовывоз</label>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="collapse" id="collapseExample">
+                        <div class="page-input-small row">
+                            <div class="label-left-secondary col-3">
+                                <font color="#646978">Адрес пункта выдачи</font>
+                            </div>
+                            <div class="input-secondary col-5">
+                                <input type="text" name="company-name" id="company-name" class="form-control"
+                                    placeholder="Введите адрес">
+                            </div>
+                        </div>
+                        <div class="page-input-large row">
+                            <div class="label-left-secondary col-3">
+                                <font color="#646978">Описание</font>
+                            </div>
+                            <div class="input-secondary col-5">
+                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
+                                    placeholder="Опишите способ доставки, укажите адреса и перерывы в работе. Этот комментарий будет виден на вашей витрине"></textarea>
+                            </div>
+                        </div>
+                        <div class="pickup-price row">
+                            <div class="label-left-secondary col-3">
+                                <font color="#646978">Стоимость ₽</font>
+                            </div>
+                            <div class="input-secondary col-2">
+                                <input type="number-input" name="company-name" id="company-name" class="form-control"
+                                    placeholder="0">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="DPD-delivery row">
+                        <div class="col-3">
+                            <form>
+                                <div class="custom-control custom-checkbox" data-bs-toggle="collapse"
+                                    href="#collapseDPD" role="button" aria-expanded="false" aria-controls="collapseDPD">
+                                    <input type="checkbox" class="custom-control-input" id="secondcheck-dpd"
+                                        name="delivery-dpd">
+                                    <label class="custom-control-label" for="secondcheck-dpd">Транспортная компания
+                                        DPD</label>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="collapse" id="collapseDPD">
+                        <div class="page-input-small row">
+                            <div class="label-left-secondary col-3">
+                                <font color="#646978">Город отправления</font>
+                            </div>
+                            <div class="input-secondary col-5">
+                                <input type="text" name="company-name" id="company-name" class="form-control"
+                                    placeholder="Выберите или введите город отправления">
+                            </div>
+                        </div>
+                        <div class="page-input-large row">
+                            <div class="label-left-secondary col-3">
+                                <font color="#646978">Описание</font>
+                            </div>
+                            <div class="input-secondary col-5">
+                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
+                                    placeholder="Опишите способ доставки, укажите адреса и перерывы в работе. Этот комментарий будет виден на вашей витрине"></textarea>
+                            </div>
+                        </div>
+                        <div class="selection-delivery row">
+                            <div class="label-left-secondary col-3">
+                                <font color="#646978">Отправка</font>
+                            </div>
+                            <div class="form_radio col-2">
+                                <input id="radio-1" type="radio" name="radio" value="1">
+                                <label for="radio-1">От двери</label>
+                            </div>
+                            <div class="form_radio col-2">
+                                <input id="radio-2" type="radio" name="radio" value="2" checked>
+                                <label for="radio-2">От терминала</label>
+                            </div>
+                        </div>
+                        <div class="page-input-small row">
+                            <div class="label-left-secondary col-3">
+                                <font color="#646978">Адрес терминала</font>
+                            </div>
+                            <div class="input-secondary col-5">
+                                <input type="text" name="company-name" id="company-name" class="form-control"
+                                    placeholder="Выберите или введите адрес терминала">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="page-block">
+                <div class="content col-12">
+                    <div class="block-name row">
+                        <div class="col-6">
+                            <h2 class="fw-normal">Информация об оплате</h2>
+                        </div>
+                        <div class="col-6">
+                            <div class="add-delivery">
+                                <button type="button" class="add-btn">
+                                    <span><svg class="add-icon-btn" width="24" height="24" viewBox="0 0 24 24"
+                                            fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M19 13H13V19H11V13H5V11H11V5H13V11H19V13Z" fill="#4176C7" />
+                                        </svg>
+                                    </span>
+                                    Добавить способ оплаты
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="delivery-cta-txt">
+                        <p>
+                            <font color="#646978">Создайте и отметьте галочками доступные способы оплаты</font>
+                        </p>
+                    </div>
+                    <div class="pickup row">
+                        <div class="col-3">
+                            <form>
+                                <div class="custom-control custom-checkbox" data-bs-toggle="collapse"
+                                    href="#collapsePayment1" role="button" aria-expanded="false"
+                                    aria-controls="collapsePayment1">
+                                    <input type="checkbox" class="custom-control-input" id="thirdcheck" name="Payment1">
+                                    <label class="custom-control-label" for="thirdcheck">По счету на юридическое
+                                        лицо</label>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="collapse" id="collapsePayment1">
+                        <div class="page-input-small row">
+                            <div class="label-left-secondary col-3">
+                                <font color="#646978">НДС</font>
+                            </div>
+                            <div class="input-secondary col-5">
+                                <input type="checkbox" class="custom-control-input">
+                                <label class="custom-control-label"></label>
+                            </div>
+                        </div>
+                        <div class="page-input-large row">
+                            <div class="label-left-secondary col-3">
+                                <font color="#646978">Описание</font>
+                            </div>
+                            <div class="input-secondary col-5">
+                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
+                                    placeholder="Опишите способ оплаты. Этот комментарий будет виден на вашей витрине"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="DPD-delivery row">
+                        <div class="card-checkbox col-3">
+                            <form>
+                                <div class="custom-control custom-checkbox" data-bs-toggle="collapse"
+                                    href="#collapsePayment2" role="button" aria-expanded="false"
+                                    aria-controls="collapsePayment2">
+                                    <input type="checkbox" class="custom-control-input" id="fourthcheck"
+                                        name="Payment2">
+                                    <label class="custom-control-label" for="fourthcheck">Оплата картой</label>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="payment-icons col-3">
+                            <span class="visa">
+                                <svg width="40" height="13" viewBox="0 0 40 13" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M17.3333 12.7732H14.093L16.1197 0.227539H19.3598L17.3333 12.7732Z"
+                                        fill="#00579F" />
+                                    <path
+                                        d="M29.0796 0.534117C28.4405 0.280274 27.4267 0 26.1733 0C22.9734 0 20.7201 1.70825 20.7063 4.15054C20.6797 5.95245 22.3196 6.95327 23.5461 7.55409C24.7997 8.16803 25.2259 8.56875 25.2259 9.116C25.2131 9.95646 24.2129 10.3439 23.28 10.3439C21.9863 10.3439 21.2931 10.1441 20.2397 9.67654L19.813 9.4761L19.3596 12.2923C20.1196 12.6389 21.5197 12.9465 22.9734 12.96C26.3733 12.96 28.5868 11.2782 28.613 8.67554C28.626 7.24739 27.76 6.15308 25.8932 5.25886C24.7599 4.68483 24.0658 4.29777 24.0658 3.71044C24.0791 3.1765 24.6528 2.62961 25.9321 2.62961C26.9855 2.60282 27.7595 2.85631 28.3458 3.10998L28.6389 3.24319L29.0796 0.534117Z"
+                                        fill="#00579F" />
+                                    <path
+                                        d="M33.3863 8.32869C33.6531 7.60796 34.68 4.81853 34.68 4.81853C34.6665 4.84532 34.9463 4.0845 35.1063 3.61743L35.3327 4.69844C35.3327 4.69844 35.9463 7.70145 36.0796 8.32869C35.5732 8.32869 34.0263 8.32869 33.3863 8.32869ZM37.386 0.227539H34.8796C34.1067 0.227539 33.5195 0.454242 33.1861 1.26845L28.373 12.773H31.773C31.773 12.773 32.3327 11.2246 32.453 10.8911C32.826 10.8911 36.1334 10.8911 36.6133 10.8911C36.7063 11.3315 36.9999 12.773 36.9999 12.773H40.0001L37.386 0.227539Z"
+                                        fill="#00579F" />
+                                    <path
+                                        d="M11.3867 0.227539L8.21338 8.78246L7.86662 7.04742C7.27994 5.04541 5.44 2.87027 3.38672 1.78874L6.29335 12.7599H9.71986L14.813 0.227539H11.3867Z"
+                                        fill="#00579F" />
+                                    <path
+                                        d="M5.26663 0.227539H0.0533341L0 0.481027C4.0667 1.52212 6.75999 4.03164 7.86654 7.04795L6.73323 1.28211C6.54665 0.48085 5.97326 0.25397 5.26663 0.227539Z"
+                                        fill="#FAA61A" />
+                                </svg>
+                            </span>
+                            <span class="m-card">
+                                <svg width="32" height="20" viewBox="0 0 32 20" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#clip0)">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M11.5542 17.836H20.1188V2.13477H11.5542V17.836Z" fill="#FF5F00" />
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M12.098 9.98559C12.098 6.80019 13.56 3.96317 15.8365 2.13497C14.1715 0.797738 12.0708 0 9.7875 0C4.38204 0 0.000244141 4.47077 0.000244141 9.98559C0.000244141 15.5004 4.38204 19.9712 9.7875 19.9712C12.0708 19.9712 14.1715 19.1734 15.8365 17.8362C13.56 16.0077 12.098 13.171 12.098 9.98559Z"
+                                            fill="#EB001B" />
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M31.3674 16.1733V15.7858H31.2681L31.1542 16.0524L31.04 15.7858H30.9408V16.1733H31.0106V15.881L31.1178 16.1331H31.1904L31.2975 15.8804V16.1733H31.3674ZM30.739 16.1733V15.8519H30.8663V15.7864H30.5427V15.8519H30.6697V16.1733H30.739ZM31.673 9.98559C31.673 15.5004 27.2909 19.9712 21.8857 19.9712C19.6024 19.9712 17.5015 19.1734 15.8367 17.8362C18.1132 16.008 19.5752 13.171 19.5752 9.98559C19.5752 6.80047 18.1132 3.96345 15.8367 2.13497C17.5015 0.797738 19.6024 0 21.8857 0C27.2909 0 31.673 4.47077 31.673 9.98559Z"
+                                            fill="#F79E1B" />
+                                    </g>
+                                    <defs>
+                                        <clipPath id="clip0">
+                                            <rect width="32" height="20" fill="white" />
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                            </span>
+                            <span class="g-pay">
+                                <svg width="50" height="20" viewBox="0 0 50 20" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+
+                                    <path
+                                        d="M23.7069 9.72399V15.5631H21.8647V1.14928H26.7503C27.9288 1.12629 29.0615 1.57457 29.9197 2.40215C30.7778 3.17227 31.2583 4.28721 31.2355 5.43664C31.2583 6.59756 30.7778 7.7125 29.9197 8.49411C29.0615 9.3102 28.0089 9.72399 26.7618 9.72399H23.7069V9.72399ZM23.7069 2.91939V7.95388H26.7961C27.4826 7.97687 28.1462 7.701 28.6153 7.20675C29.5879 6.26422 29.5993 4.7125 28.6611 3.73549L28.6153 3.68951C28.1462 3.18376 27.4826 2.9079 26.7961 2.93089L23.7069 2.91939V2.91939ZM35.4803 5.37916C36.8419 5.37916 37.9174 5.74698 38.7069 6.47112C39.4963 7.20675 39.8854 8.20675 39.8854 9.48261V15.5516H38.1233V14.1838H38.0432C37.2767 15.3102 36.2698 15.8734 34.9998 15.8734C33.9242 15.8734 33.0089 15.5516 32.2881 14.9079C31.5787 14.3102 31.1783 13.4251 31.2011 12.4941C31.2011 11.4711 31.5901 10.6665 32.3567 10.0573C33.1233 9.44813 34.1531 9.14928 35.4345 9.14928C36.5329 9.14928 37.4254 9.35618 38.1348 9.74698V9.32169C38.1348 8.68951 37.8602 8.09181 37.3796 7.68951C36.8876 7.25273 36.2583 7.01135 35.6062 7.01135C34.5764 7.01135 33.7641 7.44813 33.1577 8.32169L31.5329 7.29871C32.414 6.02284 33.7297 5.37916 35.4803 5.37916V5.37916ZM33.1004 12.5401C33.1004 13.0228 33.3293 13.4711 33.7069 13.747C34.1188 14.0688 34.6222 14.2412 35.1371 14.2297C35.9151 14.2297 36.6588 13.9194 37.208 13.3677C37.8144 12.793 38.1233 12.1148 38.1233 11.3332C37.5513 10.8734 36.7503 10.6435 35.7206 10.6435C34.9769 10.6435 34.3476 10.8274 33.8442 11.1838C33.3522 11.5516 33.1004 11.9999 33.1004 12.5401V12.5401ZM49.9998 5.701L43.8442 19.9079H41.9448L44.2332 14.9424L40.1828 5.7125H42.1851L45.1027 12.793H45.1485L47.9975 5.7125L49.9998 5.701Z"
+                                        fill="#5F6368" />
+                                    <path
+                                        d="M16.2585 8.45941C16.2585 7.89619 16.2127 7.33297 16.1212 6.78125H8.35229V9.96516H12.8031C12.62 10.9881 12.0251 11.9077 11.1555 12.4824V14.5514H13.81C15.366 13.1146 16.2585 10.9881 16.2585 8.45941Z"
+                                        fill="#4285F4" />
+                                    <path
+                                        d="M8.35234 16.551C10.572 16.551 12.4485 15.8154 13.81 14.551L11.1555 12.482C10.4118 12.9878 9.46218 13.2751 8.35234 13.2751C6.20131 13.2751 4.38209 11.8154 3.72992 9.86133H0.995361V11.9993C2.39124 14.7809 5.24021 16.551 8.35234 16.551Z"
+                                        fill="#34A853" />
+                                    <path
+                                        d="M3.73047 9.86233C3.38722 8.83934 3.38722 7.7244 3.73047 6.68991V4.56348H0.995919C0.414873 5.71402 0.112061 6.98598 0.112061 8.27612C0.112061 9.56626 0.414873 10.8382 0.995919 11.9888L3.73047 9.86233V9.86233Z"
+                                        fill="#FBBC04" />
+                                    <path
+                                        d="M8.35234 3.27539C9.53083 3.2524 10.6636 3.70067 11.5102 4.51676L13.8558 2.16044C12.3684 0.74665 10.4004 -0.0234649 8.35234 -0.000476357C5.24021 -0.000476357 2.39124 1.76964 0.995361 4.56274L3.72991 6.70067C4.38209 4.73516 6.20131 3.27539 8.35234 3.27539Z"
+                                        fill="#EA4335" />
+                                    </g>
+                                    <defs>
+
+                                        <rect width="50" height="20" fill="white" />
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+
+                            </span>
+                            <span class="apple-pay">
+                                <svg width="51" height="20" viewBox="0 0 51 20" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+
+                                    <path
+                                        d="M9.3259 2.5785C8.72824 3.25404 7.77199 3.78687 6.81574 3.71075C6.69621 2.79734 7.16437 1.82683 7.71222 1.2274C8.30988 0.532826 9.35578 0.038059 10.2025 0C10.3021 0.951475 9.91359 1.88392 9.3259 2.5785ZM10.1925 3.89153C8.80793 3.81541 7.62258 4.6432 6.96515 4.6432C6.29777 4.6432 5.29172 3.92959 4.19601 3.94862C2.7716 3.96765 1.44679 4.73834 0.719646 5.96575C-0.774495 8.42055 0.331169 12.0552 1.77551 14.0533C2.48273 15.0428 3.32941 16.1275 4.44504 16.0894C5.5009 16.0514 5.91925 15.4329 7.19425 15.4329C8.47922 15.4329 8.84777 16.0894 9.9634 16.0704C11.1189 16.0514 11.846 15.0809 12.5532 14.0913C13.3601 12.9686 13.6888 11.8744 13.7087 11.8173C13.6888 11.7983 11.4775 10.9895 11.4575 8.55376C11.4376 6.5176 13.2007 5.5471 13.2804 5.49001C12.2843 4.08183 10.7304 3.92959 10.1925 3.89153ZM18.1911 1.13225V15.9657H20.6017V10.8944H23.9386C26.9866 10.8944 29.1282 8.89629 29.1282 6.00381C29.1282 3.11132 27.0265 1.13225 24.0183 1.13225H18.1911ZM20.6017 3.07326H23.3808C25.4726 3.07326 26.6679 4.13892 26.6679 6.01332C26.6679 7.88773 25.4726 8.96289 23.3708 8.96289H20.6017V3.07326ZM33.531 16.0799C35.045 16.0799 36.4495 15.3473 37.087 14.1865H37.1368V15.9657H39.3681V8.5823C39.3681 6.44148 37.5751 5.06185 34.8159 5.06185C32.256 5.06185 30.3634 6.46051 30.2937 8.38249H32.4652C32.6445 7.46908 33.531 6.86965 34.7462 6.86965C36.2204 6.86965 37.0472 7.52617 37.0472 8.73454V9.55281L34.039 9.72407C31.24 9.88582 29.7259 10.98 29.7259 12.883C29.7259 14.8049 31.2898 16.0799 33.531 16.0799ZM34.1784 14.3197C32.8935 14.3197 32.0767 13.7298 32.0767 12.8259C32.0767 11.8934 32.8636 11.3511 34.3677 11.2655L37.0472 11.1037V11.941C37.0472 13.3302 35.812 14.3197 34.1784 14.3197ZM42.3464 20C44.6972 20 45.8028 19.1437 46.7691 16.5461L51.0025 5.20457H48.5521L45.7132 13.9677H45.6634L42.8245 5.20457H40.3044L44.3884 16.0038L44.1693 16.6603C43.8007 17.7736 43.203 18.2017 42.1372 18.2017C41.948 18.2017 41.5794 18.1827 41.43 18.1637V19.9429C41.5695 19.981 42.1671 20 42.3464 20Z"
+                                        fill="black" />
+                                    </g>
+                                    <defs>
+                                        <rect width="51" height="20" fill="white" />
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+
+                            </span>
+                        </div>
+                        <div class="card-pay-settings col-3">
+                            <button type="button" class="add-btn">
+                                Настроить
+                            </button>
+                        </div>
+                    </div>
+                    <div class="collapse" id="collapsePayment2">
+                        <div class="page-input-small row">
+                            <div class="label-left-secondary col-3">
+                                <font color="#646978">НДС</font>
+                            </div>
+                            <div class="input-secondary col-5">
+                                <input type="checkbox" class="custom-control-input">
+                                <label class="custom-control-label"></label>
+                            </div>
+                        </div>
+                        <div class="page-input-small row">
+                            <div class="label-left-secondary col-3">
+                                <font color="#646978">Платежная система</font>
+                            </div>
+                            <div class="input-secondary col-5">
+                                <select class="form-select" aria-label="Default select example">
+                                    <option value="1">Яндекс Касса</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="page-input-small row">
+                            <div class="label-left-secondary col-3">
+                                <font color="#646978">ID</font>
+                            </div>
+                            <div class="input-secondary col-5">
+                                <input type="text" name="company-name" id="company-name" class="form-control"
+                                    placeholder="Введите ID">
+                            </div>
+                        </div>
+                        <div class="page-input-small row">
+                            <div class="label-left-secondary col-3">
+                                <font color="#646978">Секретный ключ</font>
+                            </div>
+                            <div class="input-secondary col-5">
+                                <input type="text" name="company-name" id="company-name" class="form-control"
+                                    placeholder="Введите ключ">
+                            </div>
+                        </div>
+                        <div class="page-input-small row">
+                            <div class="label-left-secondary col-3">
+                                <font color="#646978">Callback URL</font>
+                                <svg class="question_ic" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M11 18H13V16H11V18ZM12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 20C7.59 20 4 16.41 4 12C4 7.59 7.59 4 12 4C16.41 4 20 7.59 20 12C20 16.41 16.41 20 12 20ZM12 6C9.79 6 8 7.79 8 10H10C10 8.9 10.9 8 12 8C13.1 8 14 8.9 14 10C14 12 11 11.75 11 15H13C13 12.75 16 12.5 16 10C16 7.79 14.21 6 12 6Z"
+                                        fill="#181F36" fill-opacity="0.67" />
+                                </svg>
+                            </div>
+                            <div class="input-secondary col-5">
+                                <input type="text" name="company-name" id="company-name" class="form-control"
+                                    value="/ru/paymentonline/settoken" autocomplete="on" disabled>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="page-block">
+                <div class="content col-12">
+                    <div class="block-name row">
+                        <div class="col-12">
+                            <h2 class="fw-normal">Условия</h2>
+                        </div>
+                    </div>
+                    <div class="page-input-small row">
+                        <div class="left-flex col-5">
+                            <div class="label-left col-4">
+                                Скидка на заказ %
+                            </div>
+                            <div class="col-2">
+                                <input type="text" name="company-name" id="company-name" class="form-control"
+                                    placeholder="0">
+                            </div>
+                        </div>
+                        <div class="left-flex col-5">
+                            <div class="label-left col-5">
+                                Отсрочка платежа (дней)
+                            </div>
+                            <div class="col-2">
+                                <input type="text" name="company-name" id="company-name" class="form-control"
+                                    placeholder="0">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="page-input-small row">
+                        <div class="left-flex col-5">
+                            <div class="label-left col-4">
+                                Авансовый платеж %
+                            </div>
+                            <div class="col-2">
+                                <input type="text" name="company-name" id="company-name" class="form-control"
+                                    placeholder="0">
+                            </div>
+                        </div>
+                        <div class="left-flex col-5">
+                            <div class="label-left col-5">
+                                Срок отгрузки (дней)
+                            </div>
+                            <div class="col-2">
+                                <input type="text" name="company-name" id="company-name" class="form-control"
+                                    placeholder="0">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="page-block">
+                <div class="content col-12">
+                    <div class="block-name row">
+                        <div class="col-12">
+                            <h2 class="fw-normal">Документы</h2>
+                        </div>
+                    </div>
+                    <div class="add-docs">
+                        <div class="btn-area">
+                            <body2>Перетащите файл сюда<br>или</body2>
+                        </div>
+                        <button class="wf-button-add-doc" type="submit"><svg class="add-icon-btn" width="24" height="24"
+                                viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M19 13H13V19H11V13H5V11H11V5H13V11H19V13Z" fill="#fafafa" />
+                            </svg>Выберите файл
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="container">
+                
+                    <div class="bottom-bar row">
+                        <div class="bottom-info col-6">
+                            Итого с учетом скидок и доставки ₽:
+                            <svg class="question_ic" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M11 18H13V16H11V18ZM12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 20C7.59 20 4 16.41 4 12C4 7.59 7.59 4 12 4C16.41 4 20 7.59 20 12C20 16.41 16.41 20 12 20ZM12 6C9.79 6 8 7.79 8 10H10C10 8.9 10.9 8 12 8C13.1 8 14 8.9 14 10C14 12 11 11.75 11 15H13C13 12.75 16 12.5 16 10C16 7.79 14.21 6 12 6Z"
+                                    fill="#181F36" fill-opacity="0.67" />
+                            </svg>
+                            133 174,00
+                        </div>
+                        <div class="bottom-buttons-wrap col-6">
+                            <div class="bottom-buttons">
+                                <button class="wf-button-secondary-blue" type="submit">Предпросмотр</button>
+                                <button class="wf-button-primary-blue" type="submit">Сохранить шаблон</button>
+                                <button class="wf-button-primary-blue" type="submit">Создать ссылку</button>
+                                <button class="wf-button-primary-green" type="submit">Отправить</button>
+                            </div>
+                        </div>
+                    </div>
+                
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous">
+    </script>
+
+</body>
+
+</html>
